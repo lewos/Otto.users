@@ -6,8 +6,8 @@ WORKDIR /source
 # copiar todos los proyectos al directorio workdir
 COPY . .
 
-RUN dotnet restore "./Otto.orders/Otto.users.csproj"
-RUN dotnet publish "./Otto.orders/Otto.users.csproj" -c Release -o /app
+RUN dotnet restore "./Otto.users/Otto.users.csproj"
+RUN dotnet publish "./Otto.users/Otto.users.csproj" -c Release -o /app
 
 # Serve Stage
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
