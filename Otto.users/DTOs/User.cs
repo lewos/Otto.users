@@ -9,7 +9,7 @@ namespace Otto.users.DTOs
         [BsonId]
         [JsonPropertyName("id")]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
+        public string? Id { get; set; }
 
         [JsonPropertyName("userName")]
         public string Name { get; set; }
@@ -23,7 +23,7 @@ namespace Otto.users.DTOs
         [JsonPropertyName("userRol")]
         public string Rol { get; set; }
 
-        [JsonPropertyName("favoritos")]
-        public List<string> Favorites { get; set; }
+        [JsonPropertyName("permisos")]
+        public List<string>? Permisos { get; set; }
     }
 }
