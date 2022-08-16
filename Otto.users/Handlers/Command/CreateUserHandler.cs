@@ -20,7 +20,8 @@ namespace Otto.users.Handlers.Command
             var userDto = await _usersRepository.CreateUserAsync(request);
 
             //Mandar mail
-            SendMail(userDto);
+            //TODO comento temporal
+            //SendMail(userDto);
             
             return userDto;
         }

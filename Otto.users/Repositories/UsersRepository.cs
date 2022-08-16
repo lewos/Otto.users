@@ -17,13 +17,33 @@ namespace Otto.users.Repositories
 
         public async Task<List<User>> GetUsersAsync()
         {
-            var users = await _users.FindAsync(User => true);
-            return users.ToList();
+            try
+            {
+                var users = await _users.FindAsync(User => true);
+                return users.ToList();
+
+            }
+            catch (Exception ex )
+            {
+                var a = ex;
+                throw;
+            }
         }
 
         public async Task<User> GetUserByIdAsync(string id)
         {
             var user = await _users.FindAsync(User => User.Id == id);
+            return user.FirstOrDefault();
+        }
+        public async Task<User> GetByMUserIdAsync(string id)
+        {
+            var user = await _users.FindAsync(User => User.MUserId == id);
+            return user.FirstOrDefault();
+        }
+
+        public async Task<User> GetByTUserIdAsync(string id)
+        {
+            var user = await _users.FindAsync(User => User.TUserId == id);
             return user.FirstOrDefault();
         }
 

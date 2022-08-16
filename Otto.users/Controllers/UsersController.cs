@@ -33,6 +33,22 @@ namespace Otto.users.Controllers
             return result != null ? (IActionResult)Ok(result) : NotFound();
         }
 
+        [HttpGet("GetByMUserId/{id}", Name = "GetByMUserId")]
+        public async Task<IActionResult> GetByMUserId(string id)
+        {
+            var query = new GetByMUserIdQuery(id);
+            var result = await _mediator.Send(query);
+            return result != null ? (IActionResult)Ok(result) : NotFound();
+        }
+
+        [HttpGet("GetByTUserId/{id}", Name = "GetByTUserId")]
+        public async Task<IActionResult> GetByTUserId(string id)
+        {
+            var query = new GetByTUserIdQuery(id);
+            var result = await _mediator.Send(query);
+            return result != null ? (IActionResult)Ok(result) : NotFound();
+        }
+
         // POST api/<UsersController>
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] CreateUserCommand command)

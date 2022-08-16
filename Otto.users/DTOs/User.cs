@@ -23,6 +23,11 @@ namespace Otto.users.DTOs
         [JsonPropertyName("userRol")]
         public string Rol { get; set; }
 
+        [JsonPropertyName("tUserId")]
+        public string? TUserId { get; set; }
+        [JsonPropertyName("mUserId")]
+        public string? MUserId { get; set; }
+
         [JsonPropertyName("permisos")]
         public List<string>? Permisos { get; set; }
     }

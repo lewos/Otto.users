@@ -10,5 +10,7 @@ namespace Otto.users.Repositories
         Task<User> CreateUserAsync(User user);
         Task<bool> UpdateUserAsync(string id, User user);
         Task<bool> DeleteUserAsync(string id);
+        Task<User> GetByMUserIdAsync(string id);
+        Task<User> GetByTUserIdAsync(string id);
     }
 }
