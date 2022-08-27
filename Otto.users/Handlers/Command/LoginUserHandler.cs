@@ -17,7 +17,7 @@ namespace Otto.users.Handlers.Command
         {
             var userDto = await _usersRepository.GetUserByMailPassAsync(request.Mail, request.Pass);
             //var officesResponse = _mapperMapOfficesDtosToOfficesResponse(officesDtos);
-            if (string.IsNullOrEmpty(userDto.Pass))
+            if (!string.IsNullOrEmpty(userDto.Pass))
                 userDto.Pass = "";
             return userDto;
         }
